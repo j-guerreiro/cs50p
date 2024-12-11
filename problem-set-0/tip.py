@@ -6,11 +6,15 @@ def main():
 
 
 def dollars_to_float(d):
-    d = float(d)
-
+    # remove $ sign from left side of string
+    d = d.lstrip('$')
+    return float(d)
 
 def percent_to_float(p):
-    p = float(p)
+    # remove % sign from right side of string
+    # divide value by 100
+    p = p.rstrip('%')
+    p = (float(p)) / 100
 
-
+    return p
 main()

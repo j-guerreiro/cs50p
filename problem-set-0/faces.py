@@ -1,4 +1,4 @@
-# Author : jguerreiro
+# author : jguerreiro
 
 def convertMessage(message):
     if ':)' in message and ':(' not in message:
