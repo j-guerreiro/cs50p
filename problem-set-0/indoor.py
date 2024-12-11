@@ -1,3 +1,5 @@
+# Author: joel guerreiro
+
 textInput = "ABC"
 
 if textInput.isupper():

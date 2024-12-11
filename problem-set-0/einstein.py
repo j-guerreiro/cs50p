@@ -4,7 +4,7 @@
 # M -> mass
 # C -> speed of light (constant)
 
-# Author: joel guerreiro
+# author : jguerreiro
 
 SPEED_OF_LIGHT = 300000000 # 300mi of km/h
 

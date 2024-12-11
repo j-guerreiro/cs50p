@@ -1,5 +1,4 @@
-# juntar a parte da mensagem que não tem a carinha
-# Substituir :) por 😄 ou por ☹️
+# Author : jguerreiro
 
 def convertMessage(message):
     if ':)' in message and ':(' not in message:

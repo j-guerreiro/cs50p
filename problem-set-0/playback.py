@@ -1,6 +1,8 @@
-# ler a string
-# verificar se há espaços
-# caso existam espaços, substituir por "..."
+# read a string
+# check spaces
+# if space exist, then replace by "..."
+
+# author: jguerreiro
 
 text = "This is CS50"
 dots = "..."
