@@ -13,7 +13,7 @@ greeting = input("Greeting: ")
 # remove all whitespace
 greeting = greeting.strip()
 
-if greeting == 'hello' or greeting == 'Hello':
+if greeting == 'hello' or greeting == 'Hello' or greeting == 'HELLO':
     print("$0")
 elif greeting[0] == 'h' or greeting[0] == 'H':
     print("$20")
