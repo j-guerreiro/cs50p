@@ -43,3 +43,5 @@ elif expression.find("+") != -1:
     b = int(b)
     result =  a + b
     print(result)
+
+#TODO fix negative number input ex: with sign in front: -1 + 100
