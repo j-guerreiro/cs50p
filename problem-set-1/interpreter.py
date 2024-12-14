@@ -1,7 +1,6 @@
-# https://www.tutorialspoint.com/python-prefix-extraction-before-specific-character
+# https://www.tutorialspoint.com/python-prefix-extraction-before-specific-character -> this helped
 
 expression = input("Expression: ")
-print(expression)
 
 # remove white spaces from string
 expression = expression.replace(" ", "")
