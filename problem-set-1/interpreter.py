@@ -1,4 +1,8 @@
-# https://www.tutorialspoint.com/python-prefix-extraction-before-specific-character -> this helped
+# These links below helped a lot:
+# https://www.tutorialspoint.com/python-prefix-extraction-before-specific-character
+# https://stackoverflow.com/questions/48122608/how-do-i-generate-random-float-and-round-it-to-1-decimal-place
+#
+# author jguerreiro
 
 expression = input("Expression: ")
 
@@ -7,53 +11,51 @@ expression = expression.replace(" ", "")
 
 if expression.find("/") != -1:
     divisionDelimiter = expression.find("/")
-    a = expression[:divisionDelimiter] # pre-delimiter -> before operator
-    b = expression[divisionDelimiter + 1:] # post-delimiter -> after operator
-    a = int(a)
+    # pre-delimiter -> before operator
+    a = expression[:divisionDelimiter]
+    # post-delimiter -> after operator
+    b = expression[divisionDelimiter + 1:] 
+    a = int(a) # cast strings -> int
     b = int(b)
-    result =  round(a / b, 1) # round and show 1 decimal value
+    result = a / b
+    # cast int -> float
+    result = float(result)
+     # round and show 1 decimal value
+    result =  round(result, 1)
     print(result)
 
-elif expression.find("-", 1) != -1: # find the operator starting from index 1
+# find the operator starting from index 1
+elif expression.find("-", 1) != -1: 
     minusDelimiter = expression.find("-",1)
-
-    # left hand negative number check
-    # if expression[0] == "-":
-    #   expression = expression[1:]
-    #   a = expression[minusDelimiter]
-    #   a = int(a)
-    #   a = a * -1
-    # else:    
-    #     a = expression[:minusDelimiter]
-    #     a = int(a)
-
     a = expression[:minusDelimiter]
     b = expression[minusDelimiter + 1:]
     a = int(a)
-    b = int(b)
-        
-    # b = expression[minusDelimiter + 1:]
-    # b = int(b)
-
-    result = round(a - b, 1)
+    b = int(b)       
+    result = a - b
+    result = float(result)
+    result = round(result, 1)
     print(result)
 
-elif expression.find("*", 1) != -1:
+elif expression.find("*") != -1:
     multiplicationDelimiter = expression.find("*")
     a = expression[:multiplicationDelimiter]
     b = expression[multiplicationDelimiter + 1:]
     a = int(a)
     b = int(b)
-    result = round(a * b, 1)
+    result = a * b
+    result = float(result)
+    result = round(result, 1)
     print(result)
 
-elif expression.find("+", 1) != -1:
+elif expression.find("+", 1) != -1: 
     plusDelimiter = expression.find("+",1)
     a = expression[:plusDelimiter]
     b = expression[plusDelimiter + 1:]
     a = int(a)
     b = int(b)
-    result =  round(a + b, 1)
+    result = a + b
+    result = float(result)
+    result = round(result, 1)
     print(result)
 
 #TODO fix negative number input ex: with sign in front: -1 + 100
