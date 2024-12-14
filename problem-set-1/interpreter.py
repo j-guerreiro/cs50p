@@ -57,5 +57,3 @@ elif expression.find("+", 1) != -1:
     result = float(result)
     result = round(result, 1)
     print(result)
-
-#TODO fix negative number input ex: with sign in front: -1 + 100
