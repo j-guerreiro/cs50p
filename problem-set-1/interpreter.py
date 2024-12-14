@@ -5,9 +5,6 @@ expression = input("Expression: ")
 # remove white spaces from string
 expression = expression.replace(" ", "")
 
-division = expression.find("/")
-
-
 if expression.find("/") != -1:
     divisionDelimiter = expression.find("/")
     a = expression[:divisionDelimiter] # pre-delimiter -> before operator
@@ -17,12 +14,22 @@ if expression.find("/") != -1:
     result =  round(a / b, 1) # round and show 1 decimal value
     print(result)
 
-elif expression.find("-") != -1:
+elif expression.find("-", 1) != -1: # find the operator starting from index 1
     minusDelimiter = expression.find("-")
-    a = expression[:minusDelimiter]
+
+    # left hand negative number check
+    if expression[0] == "-":
+      expression = expression[1:]
+      a = expression[minusDelimiter]
+      a = int(a)
+      a = a * -1
+    else:    
+        a = expression[:minusDelimiter]
+        a = int(a)
+        
     b = expression[minusDelimiter + 1:]
-    a = int(a)
     b = int(b)
+
     result =  a - b
     print(result)
 
