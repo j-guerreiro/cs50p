@@ -57,3 +57,5 @@ elif expression.find("+", 1) != -1:
     result = float(result)
     result = round(result, 1)
     print(result)
+else:
+    print("Invalid operator!")
