@@ -2,8 +2,8 @@
 # author: jguerreiro
 
 def main():
-    #time = input("What time is it?")
-    meal = mealTime(convert("18:30"))
+    time = input("What time is it? ")
+    meal = mealTime(convert(time))
     
     print(meal)
 
@@ -40,11 +40,11 @@ def mealTime(time):
     """
     mealMessage = ""
     if time >= 7 and time <= 8:
-        mealMessage = "Breakfast 🍳"
+        mealMessage = "Breakfast time! 🍳"
     elif time >= 12 and time <= 13:
-        mealMessage = "Lunch 🍲"
+        mealMessage = "Lunch time! 🍲"
     elif time >= 18 and time <= 19:
-        mealMessage = " Dinner 🍝"
+        mealMessage = " Dinner time! 🍝"
     else:
         mealMessage = " Not a meal time "
 
