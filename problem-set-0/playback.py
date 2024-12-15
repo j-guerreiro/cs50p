@@ -1,8 +1,11 @@
-# read a string
-# check spaces
-# if space exist, then replace by "..."
+# Playback problem
+# Author: jguerreiro
 
-# author: jguerreiro
+"""
+  read a string
+  check spaces
+  if space exist, then replace by '...'
+"""
 
 text = "This is CS50"
 dots = "..."

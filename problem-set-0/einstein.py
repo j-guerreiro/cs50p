@@ -1,10 +1,12 @@
-# E = m.c²
-
-# E -> energy
-# M -> mass
-# C -> speed of light (constant)
-
+# Einstein thought problem
 # author : jguerreiro
+
+"""
+  E = m.c²
+  E -> energy
+  M -> mass
+  C -> speed of light (constant)
+"""
 
 SPEED_OF_LIGHT = 300000000 # 300mi of km/h
 

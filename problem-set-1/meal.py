@@ -1,4 +1,4 @@
-# Meal time problem set
+# Meal time problem
 # author: jguerreiro
 
 def main():

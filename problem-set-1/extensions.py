@@ -1,3 +1,6 @@
+# Extensions problem
+# author: jguerreiro
+
 extensions_dict = {
 ".gif": "image/gif",
 ".jpg": "image/jpg",
@@ -10,13 +13,6 @@ extensions_dict = {
 }
 
 fileName = input("File name: ")
-
-# TODO refactor with try catch to avoid multiple if elifs
-# try:
-#   if fileName in extensions_dict[fileName]:
-#     print(extensions_dict[fileName])
-# except:
-#    print(extensions_dict["no-suffix"])
 
 if ".gif" in fileName:
     print(extensions_dict[".gif"])
