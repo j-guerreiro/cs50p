@@ -1,12 +1,11 @@
-# eat breakfast between 7:00 and 8:00
-# lunch between 12:00 and 13:00
-# dinner between 18:00 and 19:00
-# breakfast time, lunch time, or dinner time
-# 24-hour time as #:## or ##:##
+# Meal time problem set
+# author: jguerreiro
 
 def main():
     #time = input("What time is it?")
-    convert("7:30")
+    meal = mealTime(convert("18:30"))
+    
+    print(meal)
 
 
 def convert(time):
@@ -31,6 +30,25 @@ def convert(time):
     convertedTime = hourFloat + minutesToFraction
 
     return convertedTime
+
+def mealTime(time):
+    """
+      Breakfast between 7:00 and 8:00
+      Lunch between 12:00 and 13:00
+      Dinner between 18:00 and 19:00
+      Output: breakfast time, lunch time, or dinner time
+    """
+    mealMessage = ""
+    if time >= 7 and time <= 8:
+        mealMessage = "Breakfast 🍳"
+    elif time >= 12 and time <= 13:
+        mealMessage = "Lunch 🍲"
+    elif time >= 18 and time <= 19:
+        mealMessage = " Dinner 🍝"
+    else:
+        mealMessage = " Not a meal time "
+
+    return mealMessage
 
 if __name__ == "__main__":
     main()
