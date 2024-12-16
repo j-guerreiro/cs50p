@@ -1,10 +1,10 @@
 # Indoor problem
 # Author: joel guerreiro
 
-textInput = "ABC"
+text_input = "ABC"
 
-if textInput.isupper():
-    print(textInput.lower())
+if text_input.isupper():
+    print(text_input.lower())
 
-if textInput.islower():
-    print(textInput.upper())
+if text_input.islower():
+    print(text_input.upper())

@@ -12,21 +12,21 @@ extensions_dict = {
 "no-suffix": "application/octet-stream"
 }
 
-fileName = input("File name: ")
+file_name = input("File name: ")
 
-if ".gif" in fileName:
+if ".gif" in file_name:
     print(extensions_dict[".gif"])
-elif ".jpg" in fileName:
+elif ".jpg" in file_name:
     print(extensions_dict[".jpg"])
-elif ".jpeg" in fileName:
+elif ".jpeg" in file_name:
     print(extensions_dict[".jpeg"])
-elif ".png" in fileName:
+elif ".png" in file_name:
     print(extensions_dict[".png"])
-elif ".pdf" in fileName:
+elif ".pdf" in file_name:
     print(extensions_dict[".pdf"])
-elif ".txt" in fileName:
+elif ".txt" in file_name:
     print(extensions_dict[".tx"])
-elif ".zip" in fileName:
+elif ".zip" in file_name:
     print(extensions_dict[".zip"])
 else:
     print(extensions_dict["no-suffix"])

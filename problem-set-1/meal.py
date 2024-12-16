@@ -15,21 +15,21 @@ def convert(time):
       convert should return 7.5 (i.e., 7.5 hours).
     """
     # Find and set a time delimiter, ":"
-    timeDelimiterIndex = time.find(":")
+    time_delimiter_index = time.find(":")
     # Store values from left to right until delimiter ":"
-    hour = time[:timeDelimiterIndex]
-    minutes = time[timeDelimiterIndex + 1:]
+    hour = time[:time_delimiter_index]
+    minutes = time[time_delimiter_index + 1:]
 
     # Cast float and round the strings
-    hourFloat = round(float(hour),1)
-    minutesFloat = round(float(minutes),1)
+    hour_float = round(float(hour),1)
+    minutes_float = round(float(minutes),1)
 
     # Ex: To transform 30 into 0.5, you need to divide 30 by 60
-    minutesToFraction = minutesFloat / 60
+    minutes_to_fraction = minutes_float / 60
 
-    convertedTime = hourFloat + minutesToFraction
+    converted_time = hour_float + minutes_to_fraction
 
-    return convertedTime
+    return converted_time
 
 def mealTime(time):
     """
@@ -38,17 +38,17 @@ def mealTime(time):
       Dinner between 18:00 and 19:00
       Output: breakfast time, lunch time, or dinner time
     """
-    mealMessage = ""
+    meal_message = ""
     if time >= 7 and time <= 8:
-        mealMessage = "Breakfast time! 🍳"
+        meal_message = "Breakfast time! 🍳"
     elif time >= 12 and time <= 13:
-        mealMessage = "Lunch time! 🍲"
+        meal_message = "Lunch time! 🍲"
     elif time >= 18 and time <= 19:
-        mealMessage = " Dinner time! 🍝"
+        meal_message = " Dinner time! 🍝"
     else:
-        mealMessage = " Not a meal time "
+        meal_message = " Not a meal time "
 
-    return mealMessage
+    return meal_message
 
 if __name__ == "__main__":
     main()
