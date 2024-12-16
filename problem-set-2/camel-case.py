@@ -1,5 +1,5 @@
 """
-  Support material found in the web:
+  Support material that helped a lot - found in the web:
   - https://www.geeksforgeeks.org/python-convert-two-lists-into-a-dictionary/
   - https://www.geeksforgeeks.org/iterate-over-characters-of-a-string-in-python/
   - https://www.geeksforgeeks.org/python-add-substring-at-specific-index/
@@ -18,8 +18,8 @@
 
 def main():
     
-  # name_of_variable = input("🐪 Camel case variable: ")
-  snakefy("myCutePet")
+  variable_to_snakefy = input("🐪 Camel case variable: ")
+  snakefy(variable_to_snakefy)
 
 
 def snakefy(variable_name):
@@ -41,7 +41,7 @@ def snakefy(variable_name):
     if char.isupper():
       # upper_case_char.append(char)
       upper_char_index = variable_name.index(char)
-      
+
       if upper_found_counter > 0:
         upper_char_index += 1
         var_name_list.insert(upper_char_index, underscore)
