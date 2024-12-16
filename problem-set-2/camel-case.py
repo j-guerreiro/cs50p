@@ -66,7 +66,10 @@ if __name__ == "__main__":
   1. name 
   2. firstName
   3. prefferedFirstName
+  4. myPrestigiousVariableName -> my_prestigious_variable_name (fixed)
 
   To improve:
-  Ex: myPrestigiousVariableName -> my_prestigious_variabl_ename (fixed)
+  Ex: myCatCoconutCantChew (repeated letters break) -> my____catcoconutcantchew
+
+
 """
