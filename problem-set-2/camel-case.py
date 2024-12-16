@@ -42,6 +42,7 @@ def snakefy(variable_name):
       # upper_case_char.append(char)
       upper_char_index = variable_name.index(char)
 
+      # index increment bugfix (can be improved)
       if upper_found_counter > 0:
         upper_char_index += 1
         var_name_list.insert(upper_char_index, underscore)
@@ -55,3 +56,14 @@ def snakefy(variable_name):
 
 if __name__ == "__main__":
   main()
+
+# TODO: known bugs / edge cases
+"""
+  Proposed tests passed:
+  1. name 
+  2. firstName
+  3. prefferedFirstName
+
+  To improve:
+  Ex: myPrestigiousVariableName -> my_prestigious_variabl_ename
+"""
