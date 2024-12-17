@@ -18,8 +18,8 @@
 
 def main():
     
-  variable_to_snakefy = input("🐪 Camel case variable: ")
-  snakefy(variable_to_snakefy)
+  # variable_to_snakefy = input("🐪 Camel case variable: ")
+  snakefy("myCatCoconutCantChew")
 
 
 def snakefy(variable_name):
@@ -35,23 +35,13 @@ def snakefy(variable_name):
 
   underscore = "_"
   var_name_list = list(variable_name)
-  counter = 0
-  counter_2 = 0
+  result = []
 
-  for char in variable_name:
+  for index, char in enumerate (var_name_list):
     if char.isupper():
-      upper_char_index = variable_name.index(char)
-
-      # index increment bugfix (can be improved)
-      if counter_2 > 0:
-        upper_char_index += counter
-        var_name_list.insert(upper_char_index, underscore)
-      else:
-        var_name_list.insert(upper_char_index, underscore)
-        counter_2 += 1
-      counter += 1
-  
-  snakefied_string = ''.join(var_name_list).lower()
+      result.append(underscore)
+    result.append(char.lower())
+  snakefied_string = ''.join(result)
 
   print(snakefied_string)
 
@@ -59,17 +49,12 @@ def snakefy(variable_name):
 if __name__ == "__main__":
   main()
 
-
-# TODO: known bugs / edge cases
 """
   Proposed tests passed:
   1. name 
   2. firstName
   3. prefferedFirstName
   4. myPrestigiousVariableName -> my_prestigious_variable_name (fixed)
-
-  To improve:
-  Ex: myCatCoconutCantChew (repeated letters break) -> my____catcoconutcantchew
-
-
+  5. Pitfall! myCatCoconutCantChew (repeated letters break) -> my____catcoconutcantchew 
+    (fixed using enumerate instead of getting the index of the first occurrence, and append instead of insert)
 """
