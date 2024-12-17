@@ -10,13 +10,17 @@
     Assume that the user will only input integers, and ignore any integer that isn’t an accepted denomination.
 """
 
-value_counter = 0
+amount_due = 50
+value_counter = amount_due
 
 while True:
-    insert_a_coin = input("Inser a coin: ")
-    value_counter += insert_a_coin
-
-    if value_counter > 50:
+    print(f"Amount due: {value_counter}")
+    insert_a_coin = input("Insert a coin: ")
+    insert_a_coin = int(insert_a_coin)
+    value_counter = value_counter - insert_a_coin
+    
+    if value_counter == 0:
         break
 
-print(value_counter)
+
+print(f"Change owed: {value_counter}")
