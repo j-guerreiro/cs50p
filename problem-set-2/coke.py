@@ -20,12 +20,18 @@ while True:
 
     if insert_a_coin == 5 or insert_a_coin == 10 or insert_a_coin == 25:
         value_counter = value_counter - insert_a_coin
+
+        if value_counter < 0:
+          value_counter = value_counter * -1
+          break
+        
         if value_counter == 0:
           break
         else:
            continue
     else:
        print("Invalid value, try again!")
+       print("Accepted values: $25 cents, $10 cents, and $5 cents")
        continue
 
 
@@ -33,5 +39,6 @@ print(f"Change owed: {value_counter}")
 
 # TODO's
 """
-  1. There is a bug when owing values, they are negative.
+  1. There is a bug when owing values (ex: 25, 10, 25 = -10), they are negative. (fixed)
+  2. Could check if the input is not a number, ex: $%'& etc
 """
