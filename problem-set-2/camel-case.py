@@ -17,7 +17,7 @@
 """
 
 def main():
-  variable_to_snakefy = input("🐪 Camel case variable: ")
+  variable_to_snakefy = input("🐪 Camel case variable name: ")
   snakefy(variable_to_snakefy)
 
 
@@ -42,7 +42,7 @@ def snakefy(variable_name):
     result.append(char.lower())
   snakefied_string = ''.join(result)
 
-  print(snakefied_string)
+  print(f"🐍 Snake case variable name: {snakefied_string}")
 
 
 if __name__ == "__main__":
