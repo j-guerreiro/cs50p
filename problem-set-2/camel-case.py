@@ -17,9 +17,8 @@
 """
 
 def main():
-    
-  # variable_to_snakefy = input("🐪 Camel case variable: ")
-  snakefy("myCatCoconutCantChew")
+  variable_to_snakefy = input("🐪 Camel case variable: ")
+  snakefy(variable_to_snakefy)
 
 
 def snakefy(variable_name):
