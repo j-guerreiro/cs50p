@@ -17,10 +17,21 @@ while True:
     print(f"Amount due: {value_counter}")
     insert_a_coin = input("Insert a coin: ")
     insert_a_coin = int(insert_a_coin)
-    value_counter = value_counter - insert_a_coin
-    
-    if value_counter == 0:
-        break
+
+    if insert_a_coin == 5 or insert_a_coin == 10 or insert_a_coin == 25:
+        value_counter = value_counter - insert_a_coin
+        if value_counter == 0:
+          break
+        else:
+           continue
+    else:
+       print("Invalid value, try again!")
+       continue
 
 
 print(f"Change owed: {value_counter}")
+
+# TODO's
+"""
+  1. There is a bug when owing values, they are negative.
+"""
