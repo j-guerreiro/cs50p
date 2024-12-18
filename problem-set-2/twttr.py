@@ -33,6 +33,18 @@ for i in text_array:
         if i == j:
             text_array.remove(i)
 
+# Loop over compare and remove pass I
+for i in text_array:
+    for j in lower_vowels:
+        if i == j:
+            text_array.remove(i)
+            
+# Loop over compare and remove pass II
+for i in text_array:
+    for j in upper_vowels:
+        if i == j:
+            text_array.remove(i)
+
 no_vowel_string = ''.join(text_array)
 
 print(no_vowel_string)
@@ -40,5 +52,6 @@ print(no_vowel_string)
 """
     TODO's:
     - Bug with 'u' letter 
-    - At first I used nested loops, but I should try a non nested loop solution later
+    - At first I used nested loops, but I should try a non nested loop solution later - to improve
+    - This kind of fix the 'u' letter issues, but it has too much code duplication - to improve
 """
