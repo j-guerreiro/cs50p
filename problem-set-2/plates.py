@@ -27,7 +27,10 @@ def main():
 
 
 def is_valid(s):
-    ...
+    # maximum of 6 characters (letters or numbers) and a minimum of 2 characters
+    if len(s) >= 2 and len(s) <= 6:
+        print("valid")
 
+        
 
 main()
