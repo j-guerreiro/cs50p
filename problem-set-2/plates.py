@@ -1,6 +1,9 @@
 # Plates problem
 # author: jguerreiro
 
+import string
+import re
+
 """
     In Massachusetts, home to Harvard University, 
     it's possible to request a vanity license plate for your car, with your choice of letters and numbers instead of random ones. 
@@ -25,12 +28,34 @@ def main():
     else:
         print("Invalid")
 
+def check_length(s):
+    # All vanity plates must start with at least two letters.   
+    return len(s) >= 2 and len(s) <= 6
+
+def check_first_two(s):
+    # check if the first two characters are not numbers
+    first_two_type = str(type(s[0:2]))
+    return  first_two_type == "<class 'str'>"
+
+def check_illegal_chars(s):
+    illegal_chars = string.punctuation
+    counter = 0
+    
+    for i in illegal_chars:
+        for j in s:
+            if i == j:
+                counter = counter + 1
+
+    print(counter)
+    return counter == 0
+
 
 def is_valid(s):
     # maximum of 6 characters (letters or numbers) and a minimum of 2 characters
-    if len(s) >= 2 and len(s) <= 6:
-        print("valid")
+    validate_length = check_length(s)
+    validate_first_2_letters = check_first_two(s)
+    validate_illegal_chars = check_illegal_chars(s)
 
-        
+    return validate_length and validate_first_2_letters and validate_illegal_chars
 
 main()
