@@ -46,7 +46,6 @@ def check_illegal_chars(s):
             if i == j:
                 counter = counter + 1
 
-    print(counter)
     return counter == 0
 
 
