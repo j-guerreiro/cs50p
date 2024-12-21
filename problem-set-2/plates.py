@@ -44,7 +44,6 @@ def check_first_two(s):
 def check_illegal_chars(s):
     # No periods, spaces, or punctuation marks are allowed.
     illegal_chars = string.punctuation
-    print(illegal_chars)
     counter = 0
     
     # In the future could use regex to validate, but now that should be enough.
@@ -62,7 +61,7 @@ def check_illegal_chars(s):
 
 
 def is_valid(s):
-    # maximum of 6 characters (letters or numbers) and a minimum of 2 characters
+    s = s.upper()
     validate_length = check_length(s)
     validate_first_2_letters = check_first_two(s)
     validate_illegal_chars = check_illegal_chars(s)
