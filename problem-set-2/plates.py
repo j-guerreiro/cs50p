@@ -42,13 +42,21 @@ def check_first_two(s):
 
 
 def check_illegal_chars(s):
+    # No periods, spaces, or punctuation marks are allowed.
     illegal_chars = string.punctuation
+    print(illegal_chars)
     counter = 0
     
+    # In the future could use regex to validate, but now that should be enough.
     for i in illegal_chars:
         for j in s:
             if i == j:
                 counter = counter + 1
+
+    # Empty spaces check:
+    for letter in s:
+        if letter == " ":
+            counter =  counter + 1
 
     return counter == 0
 
@@ -59,6 +67,8 @@ def is_valid(s):
     validate_first_2_letters = check_first_two(s)
     validate_illegal_chars = check_illegal_chars(s)
 
-    return validate_length and validate_first_2_letters and validate_illegal_chars
+    result = validate_length and validate_first_2_letters and validate_illegal_chars  
+
+    return result
 main()
 
