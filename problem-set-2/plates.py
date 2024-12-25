@@ -39,8 +39,10 @@ def check_length(s):
 def check_first_two(s):
     # check if the first two characters are not numbers.
     numbers_found = 0
+    char_list = list(s)
+    loop_counter = 0
 
-    for char in range(0,1):
+    for char in char_list:
         try:
             int(char)
         except:
@@ -48,6 +50,11 @@ def check_first_two(s):
         else:
             print("A number was found, flagging as FALSE")
             numbers_found = numbers_found + 1
+        
+        loop_counter = loop_counter + 1
+
+        if loop_counter > 1:
+            break
             
     """  
        if numbers are found, return false
@@ -73,6 +80,7 @@ def check_illegal_chars(s):
             counter =  counter + 1
 
     return counter == 0
+
 
 def check_number_pattern(s):
     """
@@ -102,24 +110,26 @@ def check_number_pattern(s):
 
     """
 
-    # beginning_check = check_first_two(s)
-
+    # TODO:
     # string_list = list(s)
-
-    # string_list = []
-
-    # After a letter, there can't be a number next
-    # AB1C23 -> B1C -> number is in the middle
-    # A1C, A1
+    # # Check length range (2 to 6) and check if the first 2 chars are not nums
+    # if check_length(s) and check_first_two(s):
+    #     # Check if first number found is zero
+    #     for char in string_list:
+    #         try:
+    # else:
+    #     return False
 
 
 def is_valid(s):
     s = s.upper()
     validate_length = check_length(s)
     validate_first_2_letters = check_first_two(s)
-    validate_illegal_chars = check_illegal_chars(s)
+    #validate_illegal_chars = check_illegal_chars(s)
 
-    result = validate_length and validate_first_2_letters and validate_illegal_chars  
+    result = validate_first_2_letters and validate_length
+
+    # result = validate_length and validate_first_2_letters and validate_illegal_chars  
 
     return result
 main()
