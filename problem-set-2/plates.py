@@ -38,8 +38,8 @@ def check_length(s):
 
 def check_first_two(s):
     # check if the first two characters are not numbers.
-    numbers_found = 0
     char_list = list(s)
+    numbers_found = 0
     loop_counter = 0
 
     for char in char_list:
@@ -57,8 +57,8 @@ def check_first_two(s):
             break
             
     """  
-       if numbers are found, return false
-       if numbers are NOT found, return true
+       if numbers ARE FOUND, return False
+       if numbers ARE NOT found, return True
     """
     return not(numbers_found > 0)
 
@@ -109,27 +109,36 @@ def check_number_pattern(s):
         ❌ ABC012 (Invalid, the first number is 0).
 
     """
+    char_list = list(s)
 
-    # TODO:
-    # string_list = list(s)
-    # # Check length range (2 to 6) and check if the first 2 chars are not nums
-    # if check_length(s) and check_first_two(s):
-    #     # Check if first number found is zero
-    #     for char in string_list:
-    #         try:
-    # else:
-    #     return False
+    # 1. Check length range (2 to 6) and check if the first 2 chars are not nums
+    if check_length(s) and check_first_two(s):
+
+        # 2. Check if first number found is zero
+        for char in char_list:
+            try:
+                char_to_num = int(char)
+            except:
+                print("Strings cannot be converted to int")
+            else:
+                print("A number was found, check if it is zero")
+                if char_to_num == 0:
+                    print("First number found is zero!")
+                    return False
+
+        # 3. TODO
+    else:
+        return False
 
 
 def is_valid(s):
     s = s.upper()
     validate_length = check_length(s)
     validate_first_2_letters = check_first_two(s)
-    #validate_illegal_chars = check_illegal_chars(s)
+    validate_illegal_chars = check_illegal_chars(s)
+    validate_number_pattern = check_number_pattern(s)
 
-    result = validate_first_2_letters and validate_length
-
-    # result = validate_length and validate_first_2_letters and validate_illegal_chars  
+    result = validate_length and validate_first_2_letters and validate_illegal_chars and validate_number_pattern
 
     return result
 main()
