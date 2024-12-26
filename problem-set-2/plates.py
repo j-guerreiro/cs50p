@@ -107,13 +107,12 @@ def check_number_pattern(s):
         Example:
         ✅ ABC123 (Valid, first number is not 0).
         ❌ ABC012 (Invalid, the first number is 0).
-
     """
+
     char_list = list(s)
 
     # 1. Check length range (2 to 6) and check if the first 2 chars are not nums
     if check_length(s) and check_first_two(s):
-
         # 2. Check if first number found is zero
         for char in char_list:
             try:
@@ -125,12 +124,11 @@ def check_number_pattern(s):
                 if char_to_num == 0:
                     print("First number found is zero!")
                     return False
-
         # 3. TODO a pattern found is: after a number, there cant be a character next
-        # Ex:
+        # Ex: ❌ AAA22A (2 numbers and 1 letter) and ❌ AB1C23 ( B1C - number between 2 chars)
     else:
         return False
-    
+
     return True
 
 
