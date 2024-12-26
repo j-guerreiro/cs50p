@@ -126,20 +126,22 @@ def check_number_pattern(s):
                     print("First number found is zero!")
                     return False
 
-        # 3. TODO
+        # 3. TODO a pattern found is: after a number, there cant be a character next
+        # Ex:
     else:
         return False
+    
+    return True
 
 
 def is_valid(s):
     s = s.upper()
-    validate_length = check_length(s)
-    validate_first_2_letters = check_first_two(s)
-    validate_illegal_chars = check_illegal_chars(s)
-    validate_number_pattern = check_number_pattern(s)
-
-    result = validate_length and validate_first_2_letters and validate_illegal_chars and validate_number_pattern
-
-    return result
+    return (
+        check_length(s)
+        and check_first_two(s)
+        and check_illegal_chars(s)
+        and check_number_pattern(s)
+    )
 main()
+
 
