@@ -1,8 +1,8 @@
 # Plates problem
+# this helped-> https://www.geeksforgeeks.org/check-if-string-contains-substring-in-python/
 # author: jguerreiro
 
 import string
-
 
 """
     In Massachusetts, home to Harvard University, 
@@ -110,6 +110,7 @@ def check_number_pattern(s):
     """
 
     char_list = list(s)
+    pattern_list = []
 
     # 1. Check length range (2 to 6) and check if the first 2 chars are not nums
     if check_length(s) and check_first_two(s):
@@ -119,17 +120,30 @@ def check_number_pattern(s):
                 char_to_num = int(char)
             except:
                 print("Strings cannot be converted to int")
+                pattern_list.append('c')
             else:
                 print("A number was found, check if it is zero")
                 if char_to_num == 0:
                     print("First number found is zero!")
                     return False
-        # 3. TODO a pattern found is: after a number, there cant be a character next
-        # Ex: ❌ AAA22A (2 numbers and 1 letter) and ❌ AB1C23 ( B1C - number between 2 chars)
+                pattern_list.append('n')
+
+        # AA1 (char,char,num) or A1A (char,num,char) are illegal
+        string_pattern = "".join(pattern_list)
+        print(string_pattern)
+        valid_pattern = True
+
+        if 'cnc' in string_pattern:
+            valid_pattern = False
+        elif 'nnc' in string_pattern:
+            valid_pattern = False
+        else:
+            valid_pattern = True
+
     else:
         return False
 
-    return True
+    return valid_pattern and True
 
 
 def is_valid(s):
