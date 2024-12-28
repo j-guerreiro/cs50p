@@ -18,23 +18,20 @@
 text = "Your"
 
 def remove_vowels(s):
-
-    lower_vowels = ['a', 'e', 'i', 'o', 'u']
-    upper_vowels = ['A', 'E', 'I', 'O', 'U']
+    MAX_ITERATIONS = 2
     
     string_list = list(s)
-
+    lower_vowels = ['a', 'e', 'i', 'o', 'u']
+    upper_vowels = ['A', 'E', 'I', 'O', 'U']
     counter = 0
-    # Loop over compare LOWER case and remove vowel
 
-    # run cleaner 2 times
+    # Loop over compare LOWER case and remove vowel
     while True:
         for i in string_list:
             for j in lower_vowels:
                 if i == j:
                     string_list.remove(i)
                     
-        # Loop over compare UPPER case and remove vowel
         for i in string_list:
             for j in upper_vowels:
                 if i == j:
@@ -44,7 +41,7 @@ def remove_vowels(s):
 
         counter = counter + 1
 
-        if counter == 2:
+        if counter == MAX_ITERATIONS:
             break
 
     print(no_vowel_string)
