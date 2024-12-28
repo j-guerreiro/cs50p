@@ -110,8 +110,7 @@ def check_number_pattern(s):
     """
 
     char_list = list(s)
-    pattern_list = []
-
+    number_count = 0
     # 1. Check length range (2 to 6) and check if the first 2 chars are not nums
     if check_length(s) and check_first_two(s):
         # 2. Check if first number found is zero
@@ -120,30 +119,48 @@ def check_number_pattern(s):
                 char_to_num = int(char)
             except:
                 print("Strings cannot be converted to int")
-                pattern_list.append('c')
             else:
                 print("A number was found, check if it is zero")
-                if char_to_num == 0:
+                
+                if char_to_num != 0:
+                    number_count = number_count + 1
+
+                if char_to_num == 0 and number_count == 0:
                     print("First number found is zero!")
                     return False
-                pattern_list.append('n')
-
-        # AA1 (char,char,num) or A1A (char,num,char) are illegal
-        string_pattern = "".join(pattern_list)
-        print(string_pattern)
-        valid_pattern = True
-
-        if 'cnc' in string_pattern:
-            valid_pattern = False
-        elif 'nnc' in string_pattern:
-            valid_pattern = False
-        else:
-            valid_pattern = True
 
     else:
         return False
 
-    return valid_pattern and True
+    return True
+
+
+def check_plate_pattern(s):
+    char_list = list(s)
+    pattern_list = []
+
+    for char in char_list:
+        try:
+            int(char)
+        except:
+            print("Strings cannot be converted to int")
+            pattern_list.append('c')
+        else:
+            pattern_list.append('n')
+
+    # AA1 (char,char,num) or A1A (char,num,char) are illegal
+    string_pattern = "".join(pattern_list)
+    print(string_pattern)
+    valid_pattern = True
+
+    if 'cnc' in string_pattern:
+        valid_pattern = False
+    elif 'nnc' in string_pattern:
+        valid_pattern = False
+    else:
+        valid_pattern = True
+
+    return valid_pattern
 
 
 def is_valid(s):
@@ -153,6 +170,7 @@ def is_valid(s):
         and check_first_two(s)
         and check_illegal_chars(s)
         and check_number_pattern(s)
+        and check_plate_pattern(s)
     )
 main()
 
