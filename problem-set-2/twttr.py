@@ -14,44 +14,45 @@
     (A, E, I, O, and U) omitted, whether inputted in uppercase or lowercase.
 """
 
-lower_vowels = ['a', 'e', 'i', 'o', 'u']
-upper_vowels = ['A', 'E', 'I', 'O', 'U']
+
 text = "Your"
-text_array = list(text)
-no_vowel_string = []
-vowel_counter = 0
 
-# Loop over compare and remove pass I
-for i in text_array:
-    for j in lower_vowels:
-        if i == j:
-            text_array.remove(i)
-            
-# Loop over compare and remove pass II
-for i in text_array:
-    for j in upper_vowels:
-        if i == j:
-            text_array.remove(i)
+def remove_vowels(s):
 
-# Loop over compare and remove pass I
-for i in text_array:
-    for j in lower_vowels:
-        if i == j:
-            text_array.remove(i)
-            
-# Loop over compare and remove pass II
-for i in text_array:
-    for j in upper_vowels:
-        if i == j:
-            text_array.remove(i)
+    lower_vowels = ['a', 'e', 'i', 'o', 'u']
+    upper_vowels = ['A', 'E', 'I', 'O', 'U']
+    
+    string_list = list(s)
 
-no_vowel_string = ''.join(text_array)
+    counter = 0
+    # Loop over compare LOWER case and remove vowel
 
-print(no_vowel_string)
+    # run cleaner 2 times
+    while True:
+        for i in string_list:
+            for j in lower_vowels:
+                if i == j:
+                    string_list.remove(i)
+                    
+        # Loop over compare UPPER case and remove vowel
+        for i in string_list:
+            for j in upper_vowels:
+                if i == j:
+                    string_list.remove(i)
+
+        no_vowel_string = ''.join(string_list)
+
+        counter = counter + 1
+
+        if counter == 2:
+            break
+
+    print(no_vowel_string)
+
+
+remove_vowels(text)
 
 """
-    TODO's:
-    - Bug with 'u' letter 
-    - At first I used nested loops, but I should try a non nested loop solution later - to improve
-    - This kind of fix the 'u' letter issues, but it has too much code duplication - to improve
+    TODO:
+    - Minor code refactor / improvement - can still be improved - using magic number is not good!
 """
