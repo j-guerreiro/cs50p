@@ -35,6 +35,7 @@ def number_of_calories(fruits, user_input):
 
     for fruit in fruits:
         if capitalized_input == fruit:
+            # {fruits[fruit]} -> access the key's value
             print(f"Fruit: {fruit} | Calories: {fruits[fruit]}")
 
 number_of_calories(fruits, fruit_choice)
