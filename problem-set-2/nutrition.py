@@ -1,5 +1,6 @@
 # Nutrition problem
 # author: jguerreiro
+# Resource that helped -> https://www.w3schools.com/python/python_dictionaries_loop.asp
 
 """
 The U.S. Food & Drug Adminstration (FDA) offers downloadable/printable posters that “show nutrition information for the 20 most 
