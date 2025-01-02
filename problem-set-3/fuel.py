@@ -25,9 +25,18 @@ def fraction_to_percentage(user_fraction):
     # Remove decimal ex: 50.0 -> 50
     result = int(fraction)
 
-    print(f"{result}%")
+    if result == 100:
+        print("F")
+    elif result == 0:
+        print("E")
+    else:
+        print(f"{result}%")
 
 # Read fraction as X / Y
-fraction = "3/4" #input("Fraction: ")
+fraction = "0/4" #input("Fraction: ")
 
 fraction_to_percentage(fraction)
+
+# TODO's:
+# Validation: X or Y is not an integer, X is greater than Y, or Y is 0
+# Catch exceptions:  ValueError or ZeroDivisionError
