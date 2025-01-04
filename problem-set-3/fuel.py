@@ -14,13 +14,48 @@
     (It is not necessary for Y to be 4.) Be sure to catch any exceptions like ValueError or ZeroDivisionError.
 """
 
-def fraction_to_percentage(user_fraction):
-    expression_list = list(user_fraction)
+def transform_input(input):
+    input_list = list(input)
+    input_values = []
 
-    dividend = int(expression_list[0])
-    divisor = int(expression_list[2])
+    for inputs in input_list:
+        if inputs != '/':
+            input_values.append(inputs)
 
-    fraction = (dividend / divisor) * 100
+    return input_values
+
+def validator(user_input):
+    value_error = True
+    division_error = True
+
+    try:
+        int(user_input[0])
+        int(user_input[1])
+    except ValueError:
+        print("Cannot convert to integer")
+        value_error = False
+
+    if (value_error):
+        try:
+            int(user_input[0]) / int(user_input[1])
+        except ZeroDivisionError:
+            print("Cannot divide by zero")
+            division_error = False
+
+    return value_error and division_error
+
+
+def fraction_to_percentage():
+    
+    while True:
+        user_fraction = input("Fraction: ")
+        values = transform_input(user_fraction)
+        evaluate = validator(values)
+
+        if evaluate:
+            break
+
+    fraction = (int(values[0]) / int(values[1])) * 100
 
     # Remove decimal ex: 50.0 -> 50
     result = int(fraction)
@@ -33,10 +68,15 @@ def fraction_to_percentage(user_fraction):
         print(f"{result}%")
 
 # Read fraction as X / Y
-fraction = "0/4" #input("Fraction: ")
 
-fraction_to_percentage(fraction)
+fraction_to_percentage()
 
 # TODO's:
-# Validation: X or Y is not an integer, X is greater than Y, or Y is 0
-# Catch exceptions:  ValueError or ZeroDivisionError
+# Validation: X or Y is not an integer (seems ok)
+# X is greater than Y (todo)
+# or Y is 0 (seems ok)
+# Catch exceptions: (seems ok)  
+# ValueError (seems ok)
+# or ZeroDivisionError (seems ok)
+# Prompt user again if it does not pass validation (todo)
+# Made good progress! Should debug and test!
