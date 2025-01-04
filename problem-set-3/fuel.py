@@ -1,5 +1,6 @@
 # Fuel problem
 # author: jguerreiro
+# Regarding exceptions this helped -> https://stackoverflow.com/questions/62062226/how-to-work-with-try-and-except-in-python
 
 """
     Fuel gauges indicate, often with fractions, just how much fuel is in a tank. 
