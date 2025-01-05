@@ -79,5 +79,4 @@ fraction_to_percentage()
 # Catch exceptions: (seems ok)  
 # ValueError (seems ok)
 # or ZeroDivisionError (seems ok)
-# Prompt user again if it does not pass validation (todo)
-# Made good progress! Should debug and test!
+# Last validation should be for input 5/4 - should ask again
