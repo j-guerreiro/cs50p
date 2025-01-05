@@ -47,11 +47,13 @@ def validator(user_input):
 
 
 def fraction_to_percentage():
-    
     while True:
         user_fraction = input("Fraction: ")
         values = transform_input(user_fraction)
         evaluate = validator(values)
+
+        if int(values[0]) > int(values[1]):
+            continue
 
         if evaluate:
             break
@@ -79,4 +81,4 @@ fraction_to_percentage()
 # Catch exceptions: (seems ok)  
 # ValueError (seems ok)
 # or ZeroDivisionError (seems ok)
-# Last validation should be for input 5/4 - should ask again
+# Last validation should be for input 5/4 - should ask again - fixed
