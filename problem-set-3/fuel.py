@@ -51,8 +51,8 @@ def fraction_to_percentage():
         user_fraction = input("Fraction: ")
         values = transform_input(user_fraction)
         evaluate = validator(values)
-
-        if int(values[0]) > int(values[1]):
+        
+        if evaluate and int(values[0]) > int(values[1]):
             continue
 
         if evaluate:
