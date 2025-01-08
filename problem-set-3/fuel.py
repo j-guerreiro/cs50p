@@ -33,14 +33,14 @@ def validator(user_input):
         int(user_input[0])
         int(user_input[1])
     except ValueError:
-        print("Cannot convert to integer")
+        print("Value Error!")
         value_error = False
 
     if (value_error):
         try:
             int(user_input[0]) / int(user_input[1])
         except ZeroDivisionError:
-            print("Cannot divide by zero")
+            print("Zero Division error!")
             division_error = False
 
     return value_error and division_error
@@ -71,14 +71,4 @@ def fraction_to_percentage():
         print(f"{result}%")
 
 # Read fraction as X / Y
-
 fraction_to_percentage()
-
-# TODO's:
-# Validation: X or Y is not an integer (seems ok)
-# X is greater than Y (todo)
-# or Y is 0 (seems ok)
-# Catch exceptions: (seems ok)  
-# ValueError (seems ok)
-# or ZeroDivisionError (seems ok)
-# Last validation should be for input 5/4 - should ask again - fixed
