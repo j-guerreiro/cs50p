@@ -1,6 +1,6 @@
 # Taqueria problem
 # author: jguerreiro
-# https://www.geeksforgeeks.org/python-get-dictionary-keys-as-a-list/
+# This helped https://www.geeksforgeeks.org/python-get-dictionary-keys-as-a-list/
 """
     One of the most popular places to eat in Harvard Square is Felipe's Taqueria, 
     which offers a menu of entrees, per the dict below, wherein the value of each key is a price in dollars:
@@ -36,6 +36,19 @@ tacos_dict = {
     "Tortilla Salad": 8.00
 }
 
+def case_fix(order)-> str:
+    splitted = order.split(" ")
+    word_array = []
+    
+    for word in splitted:
+        word = word.lower()
+        word_array.append(word.capitalize())
+
+    fixed_case = " ".join(word_array)
+
+    return fixed_case
+
+
 def check_input(order) -> bool:
     """
         Checks if the order input exists in the tacos_dict
@@ -56,30 +69,42 @@ def check_input(order) -> bool:
 
 
 def process_order():
+    """
+        Read customer order, sum orders and prints
+    """
     total = 0
 
     while True:
-        while True:
-            order = input("Order: ")
+        try:
+            # External loop keeps prompting until interrupted ctrl+d/c
+            while True:
+                # if check passed, break loop
+                # ignore input, ask again, check again.
+                order = input("Order: ")
+                if check_input(order):
+                    break
+                else:
+                    continue
 
-            # if check passed, break loop
-            # ignore input, ask again, check again.
-            if check_input(order):
-                break
-            else:
-                continue
-        
-        
-        for taco in tacos_dict:
-            if taco.casefold() == order.casefold():
-                # get the tacos_dict value from order key
-                # and sum with total
-                total = total + tacos_dict.get(order)    
-                print(f"Current total: ${total}")
-                break
+            order_case_fixed = case_fix(order)
+
+            for taco in tacos_dict:
+                if taco.casefold() == order_case_fixed.casefold():
+                    # get the tacos_dict value from order key
+                    # and sum with total
+
+                    order_value = tacos_dict.get(order_case_fixed)
+
+                    total += order_value
+                    print(f"Current total: ${total:.2f}")
+                    break
+        except EOFError:
+            print()
+            break
 
 process_order()
 
 # TODO's: 
 # Ignore any input that isn't an item (fixed)
-# Need to find a way to ignore case (bug in line 78)
+# Need to find a way to ignore case (bug in line 78) (fixed)
+# Added graceful interruption ctrl+d
