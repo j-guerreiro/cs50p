@@ -107,4 +107,4 @@ process_order()
 # TODO's: 
 # Ignore any input that isn't an item (fixed)
 # Need to find a way to ignore case (bug in line 78) (fixed)
-# Added graceful interruption ctrl+d
+# Added graceful interruption ctrl+d (fixed)
