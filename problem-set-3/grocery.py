@@ -31,16 +31,17 @@ def grocery():
 grocery()
 
 #----------------------------------------------------------------
-# TODO:
-#----------------------------------------------------------------
+# TODO's:
 # Prefix each line with number of times item was inputted - todo
-# Dictify the list and
+# Dictify the list with times_inputted + item ex: {2: "APPLE"}
+# Find a way to count / increment if the same item was typed on
+# next input
 #----------------------------------------------------------------
 # DONE:
 # Sort list alphabetically - check
 # Get inputs until ctrl+d - check
 # Treat input case-insensitively - check
-# Used same try/except from previous pset (taqueria)
+# Used same try/except from previous pset (taqueria) - check
 #----------------------------------------------------------------
 
 
