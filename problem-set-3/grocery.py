@@ -1,5 +1,6 @@
 # Taqueria problem
 # author: jguerreiro
+# Link that helped -> https://stackoverflow.com/questions/14032521/python-data-structure-sort-list-alphabetically
 
 """
     Grocery List
@@ -39,6 +40,7 @@ grocery()
 # Sort list alphabetically - check
 # Get inputs until ctrl+d - check
 # Treat input case-insensitively - check
+# Used same try/except from previous pset (taqueria)
 #----------------------------------------------------------------
 
 
